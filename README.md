@@ -78,25 +78,25 @@ GET /api/age?birthday=YYYY-MM-DD
 
 ```
 # 基本请求
-https://your-project.vercel.app/api/age?birthday=1998-05-15
+https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15
 
 # 自定义颜色和样式
-https://your-project.vercel.app/api/age?birthday=1998-05-15&color=green&style=flat
+https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&color=green&style=flat
 
 # 完整自定义
-https://your-project.vercel.app/api/age?birthday=1998-05-15&color=ff69b4&style=for-the-badge&logo=party
+https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&color=ff69b4&style=for-the-badge&logo=party
 ```
 
 ### 在 Markdown 中使用
 
 ```markdown
-![Age](https://your-project.vercel.app/api/age?birthday=1998-05-15)
+![Age](https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15)
 ```
 
 ### 在 HTML 中使用
 
 ```html
-<img src="https://your-project.vercel.app/api/age?birthday=1998-05-15" alt="Age Badge" />
+<img src="https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15" alt="Age Badge" />
 ```
 
 ## 可用的颜色
