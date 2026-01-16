@@ -1,0 +1,6 @@
+{
+  "devCommand": null,
+  "rewrites": [
+    { "source": "/age", "destination": "/api/age" }
+  ]
+}
