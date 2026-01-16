@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
+import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 interface QueryParams {
   birthday?: string;
@@ -6,11 +6,12 @@ interface QueryParams {
   color?: string;
   style?: string;
   logo?: string;
+  type?: string;
 }
 
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<void>
+  req: VercelRequest,
+  res: VercelResponse
 ): Promise<void> {
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -50,7 +51,7 @@ export default async function handler(
     // 周岁：考虑月日
     age = today.getFullYear() - birthDate.getFullYear();
     const monthDiff = today.getMonth() - birthDate.getMonth();
-    
+
     if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
       age--;
     }
