@@ -1,0 +1,18 @@
+name: Keep API Alive
+
+on:
+  schedule:
+    - cron: '*/9 * * * *'  # 每9分钟一次
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping API
+        run: |
+          curl -f -s -o /dev/null https://your-api.vercel.app/api/health || true
+        # -f: 失败时返回错误码
+        # -s: 静默模式
+        # -o /dev/null: 不输出内容
+        # || true: 即使失败也不报错
