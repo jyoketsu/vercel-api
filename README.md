@@ -66,6 +66,7 @@ GET /api/age?birthday=YYYY-MM-DD
 ```
 
 ### 示例
+![Age](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18)
 
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
