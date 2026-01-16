@@ -13,8 +13,6 @@
 ![周岁](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18&label=周岁)
 ![虚岁](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18&type=nominal&label=虚岁)
 
-**注意**: 如果在 GitHub 中修改了 label 参数但图片没有更新，这是因为 GitHub 会缓存图片。API 已经添加了时间戳参数来强制刷新缓存，但可能需要等待几分钟或强制刷新页面才能看到更新。
-
 ### /api/health
 
 健康检查端点，返回服务状态和时间戳。
@@ -138,21 +136,6 @@ https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&label=年龄&typ
 - `for-the-badge` - 徽章样式（默认）
 - `plastic` - 塑料样式
 - `social` - 社交样式
-
-## 故障排除
-
-### 图片缓存问题
-
-如果在 GitHub README 中修改了参数但图片没有更新，这是因为 GitHub 会缓存图片。解决方法：
-
-1. **强制刷新**: 在图片 URL 后手动添加时间戳参数，例如：
-   ```
-   ![周岁](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18&label=周岁&t=1234567890)
-   ```
-
-2. **等待缓存过期**: GitHub 的图片缓存通常会在几分钟到几小时内自动过期。
-
-3. **使用不同的参数**: 临时修改其他参数（如颜色）来强制生成新的图片。
 
 ## License
 
