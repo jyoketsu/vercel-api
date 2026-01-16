@@ -10,8 +10,8 @@
 
 > 生日：2017年12月18日
 
-![周岁](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18&label=周岁)
-![虚岁](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18&type=nominal&label=虚岁)
+![周岁](https://tool.xujie.cc/api/age?birthday=2017-12-18&label=周岁)
+![虚岁](https://tool.xujie.cc/api/age?birthday=2017-12-18&type=nominal&label=虚岁)
 
 ### /api/health
 
@@ -97,31 +97,31 @@ GET /api/age?birthday=YYYY-MM-DD
 
 ```
 # 基本请求（周岁）
-https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15
+https://tool.xujie.cc/api/age?birthday=1998-05-15
 
 # 虚岁
-https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&type=nominal
+https://tool.xujie.cc/api/age?birthday=1998-05-15&type=nominal
 
 # 自定义显示名（中文）
-https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&label=年龄
+https://tool.xujie.cc/api/age?birthday=1998-05-15&label=年龄
 
 # 自定义颜色和样式
-https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&color=green&style=flat
+https://tool.xujie.cc/api/age?birthday=1998-05-15&color=green&style=flat
 
 # 完整自定义
-https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&label=年龄&type=nominal&color=ff69b4&style=for-the-badge&logo=party
+https://tool.xujie.cc/api/age?birthday=1998-05-15&label=年龄&type=nominal&color=ff69b4&style=for-the-badge&logo=party
 ```
 
 ### 在 Markdown 中使用
 
 ```markdown
-![Age](https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15)
+![Age](https://tool.xujie.cc/api/age?birthday=1998-05-15)
 ```
 
 ### 在 HTML 中使用
 
 ```html
-<img src="https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15" alt="Age Badge" />
+<img src="https://tool.xujie.cc/api/age?birthday=1998-05-15" alt="Age Badge" />
 ```
 
 ## 可用的颜色
