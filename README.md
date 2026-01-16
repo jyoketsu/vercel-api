@@ -2,11 +2,22 @@
 
 基于 Vercel Serverless Functions 的 API 项目。
 
-## 当前 API
+## API
 
 ### /api/age
 
 根据生日自动生成年龄徽章，基于 [shields.io](https://shields.io/)。
+
+### /api/health
+
+健康检查端点，返回服务状态和时间戳。
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2025-01-16T12:00:00.000Z"
+}
+```
 
 ## 本地调试
 
@@ -71,6 +82,7 @@ GET /api/age?birthday=YYYY-MM-DD
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
 | `birthday` | 生日，格式 `YYYY-MM-DD` | 必填 |
+| `type` | 年龄类型：`real`(周岁) 或 `nominal`(虚岁) | `real` |
 | `color` | 徽章颜色 | `blue` |
 | `style` | 徽章样式 | `for-the-badge` |
 | `logo` | 徽章图标 | `birthday-cake` |
@@ -78,8 +90,11 @@ GET /api/age?birthday=YYYY-MM-DD
 ### 请求示例
 
 ```
-# 基本请求
+# 基本请求（周岁）
 https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15
+
+# 虚岁
+https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&type=nominal
 
 # 自定义颜色和样式
 https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&color=green&style=flat
