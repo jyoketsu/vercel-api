@@ -8,6 +8,11 @@
 
 根据生日自动生成年龄徽章，基于 [shields.io](https://shields.io/)。
 
+> 生日：2017年12月18日  
+
+![周岁](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18&label=周岁)  
+![虚岁](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18&type=nominal&label=虚岁)
+
 ### /api/health
 
 健康检查端点，返回服务状态和时间戳。
@@ -77,16 +82,17 @@ GET /api/age?birthday=YYYY-MM-DD
 ```
 
 ### 示例
-![Age](https://vercel-api-xujie.vercel.app/api/age?birthday=2017-12-18)
 
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
 | `birthday` | 生日，格式 `YYYY-MM-DD` | 必填 |
+| `label` | 徽章显示名（支持中文） | `Age` |
 | `type` | 年龄类型：`real`(周岁) 或 `nominal`(虚岁) | `real` |
 | `color` | 徽章颜色 | `blue` |
 | `style` | 徽章样式 | `for-the-badge` |
-| `logo` | 徽章图标 | `birthday-cake` |
+| `logo` | 徽章图标 | 生日蛋糕 |
 
+[logo使用simpleicons](https://simpleicons.org/)
 ### 请求示例
 
 ```
@@ -96,11 +102,14 @@ https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15
 # 虚岁
 https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&type=nominal
 
+# 自定义显示名（中文）
+https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&label=年龄
+
 # 自定义颜色和样式
 https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&color=green&style=flat
 
 # 完整自定义
-https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&color=ff69b4&style=for-the-badge&logo=party
+https://vercel-api-xujie.vercel.app/api/age?birthday=1998-05-15&label=年龄&type=nominal&color=ff69b4&style=for-the-badge&logo=party
 ```
 
 ### 在 Markdown 中使用
