@@ -2,27 +2,7 @@
 
 基于 Vercel Serverless Functions 的 API 项目。
 
-## API
 
-### /api/age
-
-根据生日自动生成年龄徽章，基于 [shields.io](https://shields.io/)。
-
-> 生日：2017年12月18日
-
-![周岁](https://tool.xujie.cc/api/age?birthday=2017-12-18&label=周岁)
-![虚岁](https://tool.xujie.cc/api/age?birthday=2017-12-18&type=nominal&label=虚岁)
-
-### /api/health
-
-健康检查端点，返回服务状态和时间戳。
-
-```json
-{
-  "status": "ok",
-  "timestamp": "2025-01-16T12:00:00.000Z"
-}
-```
 
 ## 本地调试
 
@@ -73,7 +53,14 @@ vercel
 2. 在 [vercel.com](https://vercel.com) 导入项目
 3. 自动部署完成
 
-## 使用方法
+## /api/age
+
+根据生日自动生成年龄徽章，基于 [shields.io](https://shields.io/)。
+
+> 生日：2017年12月18日
+
+![周岁](https://tool.xujie.cc/api/age?birthday=2017-12-18&label=周岁)
+![虚岁](https://tool.xujie.cc/api/age?birthday=2017-12-18&type=nominal&label=虚岁)
 
 ### 基本用法
 
@@ -124,18 +111,84 @@ https://tool.xujie.cc/api/age?birthday=1998-05-15&label=年龄&type=nominal&colo
 <img src="https://tool.xujie.cc/api/age?birthday=1998-05-15" alt="Age Badge" />
 ```
 
-## 可用的颜色
+### 可用的颜色
 
 - 基本颜色: `blue`, `green`, `yellow`, `orange`, `red`, `pink`, `purple`, `gray`
 - 十六进制: `ff69b4`, `1abc9c` 等（需要是有效的颜色代码）
 
-## 可用的样式
+### 可用的样式
 
 - `flat` - 扁平样式
 - `flat-square` - 扁平方形
 - `for-the-badge` - 徽章样式（默认）
 - `plastic` - 塑料样式
 - `social` - 社交样式
+
+## /api/health
+
+健康检查端点，返回服务状态和时间戳。
+
+```json
+{
+  "status": "ok",
+  "timestamp": "2025-01-16T12:00:00.000Z"
+}
+```
+
+## /api/holiday
+
+获取下一个节假日信息，返回 SVG 格式的节日卡片。
+
+![Next Holiday](https://tool.xujie.cc/api/holiday)
+
+### 基本用法
+
+```
+GET /api/holiday
+```
+
+### 参数说明
+
+| 参数 | 说明 | 默认值 |
+|------|------|--------|
+| `bgStartColor` | 背景渐变起始颜色 | `#F0EAE9` |
+| `bgEndColor` | 背景渐变结束颜色 | `#E7E0F2` |
+| `textColor` | 主文字颜色 | `#8839EF` |
+| `textColor2` | 强调文字颜色 | `#D05364` |
+
+### 示例
+
+#### 基本请求
+```
+https://tool.xujie.cc/api/holiday
+```
+
+#### 自定义颜色
+```
+https://tool.xujie.cc/api/holiday?bgStartColor=#ff6b6b&bgEndColor=#4ecdc4&textColor=#2c3e50
+```
+
+### 响应格式
+
+返回 SVG 格式的节日卡片，包含：
+- 下一个节假日名称和日期
+- 距离节假日的天数
+
+如果没有节假日安排，会显示"暂无节假日安排"的提示。
+
+### 在 Markdown 中使用
+
+```markdown
+![Next Holiday](https://tool.xujie.cc/api/holiday)
+```
+
+### 在 HTML 中使用
+
+```html
+<img src="https://tool.xujie.cc/api/holiday" alt="Next Holiday Card" />
+```
+
+
 
 ## License
 
