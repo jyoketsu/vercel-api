@@ -63,7 +63,14 @@ export default async function handler(
   let holidayInfo: HolidayInfo | null = null;
 
   try {
-    const response = await fetch('https://timor.tech/api/holiday/next');
+    const response = await fetch('https://timor.tech/api/holiday/next', {
+      headers: {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36',
+        'Accept': 'application/json, text/plain, */*',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+        'Referer': 'https://timor.tech/',
+      },
+    });
 
     if (!response.ok) {
       throw new Error(`API request failed: ${response.status}`);
