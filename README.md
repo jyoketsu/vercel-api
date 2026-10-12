@@ -135,6 +135,16 @@ https://tool.xujie.cc/api/age?birthday=1998-05-15&label=年龄&type=nominal&colo
 }
 ```
 
+## /api/living-expense
+
+根据发薪日和生活费总额计算当前周期的生活费预期余额。发薪日当天余额为总额，之后按当前发薪周期的天数平均扣除每日生活费。默认发薪日为每月 10 日，生活费总额为 3000。
+
+```text
+GET /api/living-expense?payday=15&total=10000
+```
+
+`payday` 支持每月日期（`1-31`）或完整日期（`YYYY-MM-DD`），默认 `10`；`total` 为生活费总额，默认 `3000`。响应中的 `balance` 是已按千分位格式化的展示值。
+
 ## /api/holiday
 
 获取下一个节假日信息，返回 SVG 格式的节日卡片。
